@@ -6,7 +6,7 @@
 
   - Availability zone is logical data center
 
-  - Edge Locations are CDN End Points for CloudFront. Many more edge locations exist than regions.
+  - Edge Locations are enpoints for AWS which are used for caching content. Typically this consists of CloudFront, Amazon's CDN. Many more edge locations exist than regions.
 
 ## The AWS Platform
 
@@ -23,41 +23,32 @@
   - Compute 
 
       - EC2 – Elastic Compute Cloud.
-
       - EC2 Container Services – supports Docker.
-
       - Elastic Beanstalk (important for developer exam). Just upload your code here. Elastic Bean stalk will provision all infrastructure required.
-
-      - Lambda. Alexa, Echo devices rely on Lambda
-
-      - Lightsail – Out of the box cloud – WordPress, Drupal
+      - Lambda - Code that uploaded and it executes
+      - Lightsail – Out of the box cloud – WordPress, Drupal    
+      - Batch - Batch compute in the cloud (Not currently coverved)
 
   - Storage
 
       - S3 - Object Store
-
-      - Glacier – Archive files from S3 into Glacier – use when you don’t need immediate access to files
-
       - EFS (Elastic File Service) - Block Store - can be used for storing databases. It can be attached to multiple EC2 instances.
-
+      - Glacier – Archive files from S3 into Glacier – use when you don’t need immediate access to files
+      - Snowball - Transfer files to a physical disc
       - Storage Gateway (VM) - communicates between your data center and S3 storage.
 
   - Databases
 
       - RDS ( MySQL, PostgreSQL, SQL Server, MariaDB, Aurora)
-
       - DynamoDB - Non relational DB (important for developer exam)
-
-      - Redshift  - Data warehousing system - 
-
-      - ElastiCache - Cloud in-memory DB (important for developer / architect exam)
+      - Redshift  - Data warehousing system, business intelligence. Take load off prod DB 
+      - ElastiCache - Cache things in Cloud in-memory DB (important for developer / architect exam)
 
   - Migration
-
+      - AWS Migration Hub
+      - ADS(Application Discovery Service) - Track db dependancies
       - Snowball - Transfer Data - next step over Export Import gateway. Store all your data from enterprise into Snowball and then ship to AWS. Also released Snowball edge – add compute capacity to storage device – so that you can run analytics on top of the huge dataset collected, without having to transfer to cloud. AWS Lambda is supported on Snowball edge.
-
       - DMS - Database migration services - migrate existing DBs to Cloud, also migrate existing Cloud DBs to other regions. Can migrate from Oracle/MySQL/PostgreSQL/ to Aurora.  
-
       - SMS - Server migration services - migrate existing VMs on premise to the Cloud -up to 50 concurrent ones.
 
   - Analytics
